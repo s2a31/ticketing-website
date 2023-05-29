@@ -8,6 +8,10 @@ h1 {
   text-align: center;
 }
 
+.towerImg {
+  border-radius: 5px;
+}
+
 strong {
   color: #2493df;
 }
@@ -18,7 +22,7 @@ section {
 }
 
 ul li {
- list-style: square inside none; 
+  list-style: square inside none;
 }
 
 p b {
@@ -27,10 +31,26 @@ p b {
 
 table {
   border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
-th, td {
-  border: 1px solid black;
+tr:nth-child(1),
+tr:nth-child(2) {
+  border-bottom: 0.5px solid rgb(223, 222, 222);
+}
+
+tr:nth-child(1) th:nth-child(1) {
+  border-right: 0.5px solid #087ac7;
+}
+
+tr:nth-child(2) td:nth-child(1),
+tr:nth-child(3) td:nth-child(1) {
+  border-right: 0.5px solid rgb(223, 222, 222);
+}
+
+th,
+td {
   padding: 10px;
 }
 
@@ -39,6 +59,45 @@ th {
   color: white;
 }
 
+td {
+  background-color: #eff8ff;
+}
+
+#confirmation {
+  display: none; /* Hide the popup by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background-color: #daf2ff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.ticket {
+  margin-bottom: 0;
+}
+
+.cancel {
+  position: absolute;
+  top: 5px;
+  right: 13px;
+  color: #fa8989;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  color: #ff0000;
+}
 
 .form-section {
   flex: 1;
@@ -61,10 +120,13 @@ input[type='number'] {
   padding: 2px;
   text-align: center;
   width: 50px;
+  border-radius: 5px;
+  border: none;
 }
 
 input[type='button'] {
   background-color: #2493df;
+  border-radius: 5px;
   font-weight: bold;
   font-size: 16px;
   color: white;
